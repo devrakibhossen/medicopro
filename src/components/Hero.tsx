@@ -120,7 +120,7 @@ const Hero = () => {
           {/* Trust Indicator */}
           <motion.div
             {...fadeUp(0.7)}
-            className="mt-10 flex items-center gap-3 text-sm text-gray-400"
+            className="mt-10 flex md:flex-row flex-col items-center gap-3 text-sm text-gray-400"
           >
             <div className="flex -space-x-2">
               {[
