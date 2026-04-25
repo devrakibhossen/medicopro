@@ -1,12 +1,11 @@
 import type { Metadata } from "next";
-import { Nunito,Poppins  } from "next/font/google";
+import { Nunito, Poppins } from "next/font/google";
 import "./globals.css";
-import Navbar from "@/components/Navbar";
-import Footer from "@/components/Footer";
+import LayoutManager from "@/components/LayoutManager";
 const poppins = Poppins({
-  subsets: ['latin'],
+  subsets: ["latin"],
   weight: ["400", "600", "700", "800"],
-  variable: '--font-poppins',
+  variable: "--font-poppins",
 });
 const nunito = Nunito({
   subsets: ["latin"],
@@ -15,7 +14,8 @@ const nunito = Nunito({
 });
 export const metadata: Metadata = {
   title: "medicopro - AI assistant for symptom understanding.",
-  description: "Your Doctor, Zero Distance Healthcare for Everyone, Everywhere Zero Wait. Zero Cost. Zero Worry.",
+  description:
+    "Your Doctor, Zero Distance Healthcare for Everyone, Everywhere Zero Wait. Zero Cost. Zero Worry.",
 };
 
 export default function RootLayout({
@@ -30,10 +30,8 @@ export default function RootLayout({
       className={`${nunito.variable} ${poppins.variable} h-full antialiased font-nunito `}
     >
       <body className="min-h-full flex flex-col ">
-        <Navbar/>
-        {children}
-        <Footer/>
-        </body>
+        <LayoutManager>{children}</LayoutManager>
+      </body>
     </html>
   );
 }

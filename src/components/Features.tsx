@@ -192,7 +192,7 @@ const Features = () => {
         <div className="flex flex-col md:flex-row md:items-end md:justify-between gap-4">
           <h2 className="text-gray-900 text-3xl md:text-4xl font-semibold leading-tight max-w-lg">
             Everything you need,{" "}
-            <span className="text-[#cf4f22]">nothing you don't.</span>
+            <span className="text-[#cf4f22]">{`nothing you don't.`}</span>
           </h2>
           <p className="text-gray-500 text-sm max-w-xs leading-relaxed md:text-right">
             Medicopro brings hospital-grade health intelligence directly to your
@@ -232,7 +232,10 @@ const Features = () => {
           </p>
         </div>
         <motion.button
-          whileHover={{ scale: 1.03, boxShadow: "0 8px 30px rgba(207,79,34,0.3)" }}
+          whileHover={{
+            scale: 1.03,
+            boxShadow: "0 8px 30px rgba(207,79,34,0.3)",
+          }}
           whileTap={{ scale: 0.97 }}
           className="shrink-0 bg-[#cf4f22] text-white text-sm font-medium px-6 py-2.5 rounded-full hover:bg-[#b8431c] transition-colors shadow-md shadow-orange-200"
         >

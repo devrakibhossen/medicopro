@@ -36,7 +36,10 @@ const Hero = () => {
       {/* Animated background blobs */}
       <Blob className="w-96 h-96 bg-[#cf4f22] -top-24 -right-24" delay={0} />
       <Blob className="w-72 h-72 bg-orange-300 bottom-0 -left-20" delay={2} />
-      <Blob className="w-56 h-56 bg-[#cf4f22] top-1/2 left-1/2 -translate-x-1/2" delay={4} />
+      <Blob
+        className="w-56 h-56 bg-[#cf4f22] top-1/2 left-1/2 -translate-x-1/2"
+        delay={4}
+      />
 
       {/* Subtle grid overlay */}
       <div
@@ -50,7 +53,6 @@ const Hero = () => {
 
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative mt-10">
         <div className="flex flex-col items-center text-center">
-
           {/* Badge */}
           <motion.span
             {...fadeUp(0.1)}
@@ -83,8 +85,8 @@ const Hero = () => {
             className="mt-6 text-gray-500 font-poppins max-w-xl leading-relaxed text-base md:text-lg"
           >
             Medicopro analyzes your symptoms, suggests the right tests, and
-            recommends medicines — all in seconds. Expert health guidance is
-            now just one message away.
+            recommends medicines — all in seconds. Expert health guidance is now
+            just one message away.
           </motion.p>
 
           {/* CTA Buttons */}
@@ -94,7 +96,10 @@ const Hero = () => {
           >
             {/* Blog Button */}
             <motion.button
-              whileHover={{ scale: 1.03, boxShadow: "0 4px 20px rgba(0,0,0,0.08)" }}
+              whileHover={{
+                scale: 1.03,
+                boxShadow: "0 4px 20px rgba(0,0,0,0.08)",
+              }}
               whileTap={{ scale: 0.97 }}
               className="flex gap-2 bg-white items-center justify-center py-2.5 px-4 border border-gray-200 text-gray-700 rounded-full hover:border-gray-300 transition-all font-medium text-sm"
             >
@@ -106,7 +111,10 @@ const Hero = () => {
 
             {/* Primary CTA */}
             <motion.button
-              whileHover={{ scale: 1.03, boxShadow: "0 8px 30px rgba(207,79,34,0.35)" }}
+              whileHover={{
+                scale: 1.03,
+                boxShadow: "0 8px 30px rgba(207,79,34,0.35)",
+              }}
               whileTap={{ scale: 0.97 }}
               className="flex gap-2 items-center justify-center py-2.5 px-4 bg-[#cf4f22] text-white rounded-full hover:bg-[#b8431c] transition-all font-medium text-sm shadow-lg "
             >
@@ -144,7 +152,6 @@ const Hero = () => {
               this month
             </p>
           </motion.div>
-
         </div>
       </div>
     </section>

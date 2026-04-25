@@ -10,7 +10,8 @@ const stats = [
     value: 1000,
     suffix: "+",
     label: "Active Users",
-    description: "Patients trust Medicopro daily for fast, reliable health insights.",
+    description:
+      "Patients trust Medicopro daily for fast, reliable health insights.",
     color: "bg-white/10",
   },
   {
@@ -18,7 +19,8 @@ const stats = [
     value: 50,
     suffix: "+",
     label: "Diseases Covered",
-    description: "From common colds to complex conditions — we've got you covered.",
+    description:
+      "From common colds to complex conditions — we've got you covered.",
     color: "bg-white/10",
   },
   {
@@ -26,7 +28,8 @@ const stats = [
     value: 99,
     suffix: "%",
     label: "Symptom Accuracy",
-    description: "Clinically aligned AI trained on verified medical knowledge bases.",
+    description:
+      "Clinically aligned AI trained on verified medical knowledge bases.",
     color: "bg-white/10",
   },
   {
@@ -34,7 +37,8 @@ const stats = [
     value: 100,
     suffix: "%",
     label: "Data Secure",
-    description: "End-to-end encrypted. Your health data stays private — always.",
+    description:
+      "End-to-end encrypted. Your health data stays private — always.",
     color: "bg-white/10",
   },
 ];
@@ -134,7 +138,8 @@ const Stats = () => {
         <div
           className="absolute inset-0 opacity-[0.07] pointer-events-none"
           style={{
-            backgroundImage: "radial-gradient(circle, white 1px, transparent 1px)",
+            backgroundImage:
+              "radial-gradient(circle, white 1px, transparent 1px)",
             backgroundSize: "24px 24px",
           }}
         />

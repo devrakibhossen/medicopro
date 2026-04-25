@@ -4,24 +4,19 @@ const Footer = () => {
   return (
     <footer className="border-t bg-[#b8431c] pt-10 mt-10">
       <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8 max-w-[1150px] mx-auto px-4 mb-8">
-        
         {/* Brand */}
         <div>
-          <h3 className="text-3xl text-white font-semibold mb-4">
-            medicopro
-          </h3>
+          <h3 className="text-3xl text-white font-semibold mb-4">medicopro</h3>
           <p className="text-gray-100 text-sm leading-relaxed">
             Medicopro analyzes your symptoms, suggests the right tests, and
-            recommends medicines — all in seconds. Expert health guidance is
-            now just one message away.
+            recommends medicines — all in seconds. Expert health guidance is now
+            just one message away.
           </p>
         </div>
 
         {/* Company */}
         <div>
-          <h3 className="text-xl text-white font-poppins mb-4">
-            Company
-          </h3>
+          <h3 className="text-xl text-white font-poppins mb-4">Company</h3>
           <ul className="space-y-2 text-gray-200 text-sm">
             <li className="hover:text-white cursor-pointer">About Us</li>
             <li className="hover:text-white cursor-pointer">Careers</li>
@@ -32,9 +27,7 @@ const Footer = () => {
 
         {/* Quick Links */}
         <div>
-          <h3 className="text-xl text-white font-poppins mb-4">
-            Quick Links
-          </h3>
+          <h3 className="text-xl text-white font-poppins mb-4">Quick Links</h3>
           <ul className="space-y-2 text-gray-200 text-sm">
             <li className="hover:text-white cursor-pointer">Home</li>
             <li className="hover:text-white cursor-pointer">Features</li>
@@ -45,9 +38,7 @@ const Footer = () => {
 
         {/* Social Media */}
         <div className="space-y-3">
-          <h3 className="text-xl text-white font-poppins mb-4">
-            Social Media
-          </h3>
+          <h3 className="text-xl text-white font-poppins mb-4">Social Media</h3>
 
           {[
             { name: "Facebook", icon: "/facebook.png" },
@@ -76,7 +67,8 @@ const Footer = () => {
 
       {/* Bottom */}
       <p className="text-center text-gray-200 border-t border-white/20 py-4 font-poppins text-sm">
-        © {new Date().getFullYear()} Medicopro. All rights reserved by Rakib Hossen.
+        © {new Date().getFullYear()} Medicopro. All rights reserved by Rakib
+        Hossen.
       </p>
     </footer>
   );

@@ -73,7 +73,9 @@ const Testimonials = () => {
 
   const paginate = (dir: number) => {
     setDirection(dir);
-    setActive((prev) => (prev + dir + testimonials.length) % testimonials.length);
+    setActive(
+      (prev) => (prev + dir + testimonials.length) % testimonials.length,
+    );
   };
 
   useEffect(() => {
@@ -88,15 +90,16 @@ const Testimonials = () => {
   };
 
   return (
-    <section ref={ref} className="relative py-20 px-4 overflow-hidden font-poppins ">
-
+    <section
+      ref={ref}
+      className="relative py-20 px-4 overflow-hidden font-poppins "
+    >
       {/* Soft orange radial bg */}
       <div className="absolute top-0 left-1/2 -translate-x-1/2 w-[700px] h-[340px] bg-orange-50 rounded-full blur-3xl opacity-70 pointer-events-none" />
       <div className="absolute bottom-0 right-0 w-64 h-64 bg-orange-100/60 blur-3xl rounded-full pointer-events-none" />
       <div className="absolute bottom-0 left-0 w-48 h-48 bg-rose-50 blur-3xl rounded-full pointer-events-none" />
 
       <div className="max-w-[1150px] mx-auto relative">
-
         {/* Header */}
         <motion.div
           initial={{ opacity: 0, y: 20 }}
@@ -108,8 +111,7 @@ const Testimonials = () => {
             Testimonials
           </p>
           <h2 className="text-gray-900 text-3xl md:text-4xl font-semibold leading-tight">
-            Real people.{" "}
-            <span className="text-[#cf4f22]">Real results.</span>
+            Real people. <span className="text-[#cf4f22]">Real results.</span>
           </h2>
           <p className="text-gray-400 text-sm mt-3 max-w-md mx-auto leading-relaxed">
             From worried parents to working professionals — here's what people
@@ -127,7 +129,6 @@ const Testimonials = () => {
 
         {/* Layout: Big card left + side stack right */}
         <div className="grid grid-cols-1 lg:grid-cols-5 gap-6 items-start">
-
           {/* ── Featured card (left, 3 cols) ── */}
           <motion.div
             initial={{ opacity: 0, y: 30 }}
@@ -136,19 +137,22 @@ const Testimonials = () => {
             className="lg:col-span-3"
           >
             <div className="relative bg-[#cf4f22] rounded-3xl p-8 md:p-10 overflow-hidden shadow-2xl shadow-orange-200/60 min-h-[320px] flex flex-col justify-between">
-
               {/* Dot texture */}
               <div
                 className="absolute inset-0 opacity-[0.07] pointer-events-none"
                 style={{
-                  backgroundImage: "radial-gradient(circle, white 1px, transparent 1px)",
+                  backgroundImage:
+                    "radial-gradient(circle, white 1px, transparent 1px)",
                   backgroundSize: "22px 22px",
                 }}
               />
               <div className="absolute -bottom-10 -right-10 w-48 h-48 bg-orange-400/30 rounded-full blur-2xl pointer-events-none" />
 
               {/* Quote icon */}
-              <Quote size={56} className="absolute top-6 right-8 text-white/10 fill-white/10" />
+              <Quote
+                size={56}
+                className="absolute top-6 right-8 text-white/10 fill-white/10"
+              />
 
               <AnimatePresence custom={direction} mode="wait">
                 <motion.div
@@ -174,17 +178,27 @@ const Testimonials = () => {
                   {/* Author */}
                   <div className="flex items-center justify-between pt-4 border-t border-white/15">
                     <div className="flex items-center gap-3">
-                      <div className={`w-10 h-10 rounded-full flex items-center justify-center text-sm font-bold bg-white ${testimonials[active].avatarBg.split(" ")[1]}`}>
+                      <div
+                        className={`w-10 h-10 rounded-full flex items-center justify-center text-sm font-bold bg-white ${testimonials[active].avatarBg.split(" ")[1]}`}
+                      >
                         {testimonials[active].avatar}
                       </div>
                       <div>
-                        <p className="text-white font-semibold text-sm">{testimonials[active].name}</p>
-                        <p className="text-orange-100/70 text-xs">{testimonials[active].role}</p>
+                        <p className="text-white font-semibold text-sm">
+                          {testimonials[active].name}
+                        </p>
+                        <p className="text-orange-100/70 text-xs">
+                          {testimonials[active].role}
+                        </p>
                       </div>
                     </div>
                     <div className="flex gap-0.5">
                       {Array.from({ length: 5 }).map((_, i) => (
-                        <Star key={i} size={13} className="fill-amber-300 text-amber-300" />
+                        <Star
+                          key={i}
+                          size={13}
+                          className="fill-amber-300 text-amber-300"
+                        />
                       ))}
                     </div>
                   </div>
@@ -205,9 +219,14 @@ const Testimonials = () => {
                   {testimonials.map((_, i) => (
                     <button
                       key={i}
-                      onClick={() => { setDirection(i > active ? 1 : -1); setActive(i); }}
+                      onClick={() => {
+                        setDirection(i > active ? 1 : -1);
+                        setActive(i);
+                      }}
                       className={`rounded-full transition-all duration-300 ${
-                        i === active ? "w-5 h-2 bg-white" : "w-2 h-2 bg-white/30 hover:bg-white/50"
+                        i === active
+                          ? "w-5 h-2 bg-white"
+                          : "w-2 h-2 bg-white/30 hover:bg-white/50"
                       }`}
                     />
                   ))}
@@ -240,16 +259,23 @@ const Testimonials = () => {
                     setDirection(idx > active ? 1 : -1);
                     setActive(idx);
                   }}
-                  whileHover={{ x: 4, boxShadow: "0 8px 30px rgba(207,79,34,0.10)" }}
+                  whileHover={{
+                    x: 4,
+                    boxShadow: "0 8px 30px rgba(207,79,34,0.10)",
+                  }}
                   className="group bg-white border border-gray-100 hover:border-[#cf4f22]/25 rounded-2xl p-5 cursor-pointer transition-all duration-300"
                 >
                   <div className="flex items-start gap-3">
-                    <div className={`w-9 h-9 rounded-full flex items-center justify-center text-xs font-bold shrink-0 ${t.avatarBg}`}>
+                    <div
+                      className={`w-9 h-9 rounded-full flex items-center justify-center text-xs font-bold shrink-0 ${t.avatarBg}`}
+                    >
                       {t.avatar}
                     </div>
                     <div className="flex-1 min-w-0">
                       <div className="flex items-center justify-between mb-1">
-                        <p className="text-gray-800 font-semibold text-sm">{t.name}</p>
+                        <p className="text-gray-800 font-semibold text-sm">
+                          {t.name}
+                        </p>
                         <StarRating count={t.rating} />
                       </div>
                       <p className="text-gray-400 text-xs mb-2">{t.role}</p>
@@ -272,8 +298,12 @@ const Testimonials = () => {
                 <Star size={16} className="fill-[#cf4f22] text-[#cf4f22]" />
               </div>
               <div>
-                <p className="text-gray-800 font-semibold text-sm">4.9 / 5 Rating</p>
-                <p className="text-gray-400 text-xs">Based on 200+ verified reviews</p>
+                <p className="text-gray-800 font-semibold text-sm">
+                  4.9 / 5 Rating
+                </p>
+                <p className="text-gray-400 text-xs">
+                  Based on 200+ verified reviews
+                </p>
               </div>
             </motion.div>
           </div>
