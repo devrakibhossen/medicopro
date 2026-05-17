@@ -12,11 +12,11 @@ export default function RootLayout({
 }: Readonly<{
   children: React.ReactNode;
 }>) {
-  return <div className="flex">
-    <div className="w-64 bg-orange-500 p-5">
+  return <div className="flex h-screen">
+    {/* <div className=""> */}
       <Sidebar/>
-    </div>
-    <div className="w-64 bg-white p-5" >
+    {/* </div> */}
+    <div className="flex-1 min-w-0 overflow-y-auto p-5" >
     {children}
     </div>
     </div>;

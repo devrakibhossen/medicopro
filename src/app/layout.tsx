@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import { Nunito, Poppins } from "next/font/google";
 import "./globals.css";
 import LayoutManager from "@/components/LayoutManager";
+import { ThemeProvider } from "@/components/theme-provider";
 const poppins = Poppins({
   subsets: ["latin"],
   weight: ["400", "600", "700", "800"],
@@ -26,11 +27,14 @@ export default function RootLayout({
   return (
     <html
       lang="en"
+      data-theme="light"
       suppressHydrationWarning
       className={`${nunito.variable} ${poppins.variable} h-full antialiased font-nunito `}
     >
       <body className="min-h-full flex flex-col ">
+        <ThemeProvider>
         <LayoutManager>{children}</LayoutManager>
+        </ThemeProvider>
       </body>
     </html>
   );

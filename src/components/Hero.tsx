@@ -65,7 +65,7 @@ const Hero = () => {
           {/* Heading */}
           <motion.h1
             {...fadeUp(0.22)}
-            className="text-4xl md:text-6xl font-semibold tracking-tight text-gray-900 font-poppins max-w-4xl leading-tight"
+            className="text-4xl md:text-6xl font-semibold tracking-tight text-gray-900 dark:text-white font-poppins max-w-4xl leading-tight"
           >
             AI assistant for
             <br />

@@ -1,7 +1,7 @@
 "use client";
 import Image from "next/image";
 import Link from "next/link";
-import { ArrowUpRight, Book, Menu, X } from "lucide-react";
+import { ArrowUpRight, Menu, X } from "lucide-react";
 import { useState, useEffect } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 const Navbar = () => {
@@ -35,7 +35,7 @@ const Navbar = () => {
             height={40}
             priority
           />
-          <h3 className="text-4xl text-[#cf4f22]  font-semibold">medicopro</h3>
+          <h3 className="text-4xl text-[#cf4f22] font-poppins font-semibold">medicopro</h3>
         </div>
         <div className="md:flex items-center gap-6 hidden">
           <ul className="flex items-center gap-6 ">
@@ -44,12 +44,14 @@ const Navbar = () => {
             <Link href="/">Blog</Link>
             <Link href="/">Login</Link>
           </ul>
+          <Link href="/dashboard/chat/new">
           <button className="flex gap-1.5 items-center border border-transparent p-1 bg-[#cf4f22] text-white rounded-full hover:bg-[#b8431c] transition pl-3">
-            Try medicopro{" "}
+            Try medicopro
             <span className="bg-black p-1 rounded-full">
               <ArrowUpRight size={18} />
             </span>
           </button>
+          </Link>
         </div>
         <motion.button
           onClick={() => setOpen(true)}

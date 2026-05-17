@@ -1,30 +1,93 @@
 @import "tailwindcss";
 
-:root {
-  --background: #f5f5f5;
-  --foreground: #171717;
+@variant dark (&:where([data-theme=dark], [data-theme=dark] *));
+
+[data-theme="light"] {
+  /* Backgrounds */
+  --color-bg: #f5f5f0; /* page background      */
+  --color-surface: #ffffff; /* navbar / sidebar     */
+  --color-card: #fafaf8; /* cards / inputs       */
+  --color-border: #e5e4df; /* dividers             */
+
+  --color-card-hover: #f0f0ec;
+
+  /* Accent */
+  --color-accent: #d97706; /* primary CTA          */
+  --color-accent-h: #b45309; /* hover state          */
+  --color-accent-bg: #fef3c7; /* subtle bg tint       */
+
+  /* Text */
+  --color-text: #1a1a18; /* primary text         */
+  --color-text-muted: #6b6b68; /* labels / hints       */
+  --color-text-on-accent: #ffffff; /* text on amber button */
+
+  /* Semantic */
+  --color-success: #059669;
+  --color-warning: #d97706;
+  --color-danger: #dc2626;
+  --color-info: #2563eb;
 }
 
-@theme inline {
-  --color-background: var(--background);
-  --color-foreground: var(--foreground);
-  /* --font-sans: var(--font-geist-sans);
-  --font-mono: var(--font-geist-mono); */
-  --font-nunito : var(--font-nunito);
-  --font-poppins : var(--font-poppins);
+[data-theme="dark"] {
+  /* Backgrounds */
+  --color-bg: #1a1a18;
+  --color-surface: #222220;
+  --color-card: #2a2a27;
+  --color-border: #2e2e2c;
+
+  --color-card-hover: #323230;
+
+  /* Accent */
+  --color-accent: #f59e0b;
+  --color-accent-h: #fcd34d;
+  --color-accent-bg: #412402;
+
+  /* Text */
+  --color-text: #f5f5f0;
+  --color-text-muted: #888780;
+  --color-text-on-accent: #1a1a18;
+
+  /* Semantic */
+  --color-success: #34d399;
+  --color-warning: #fbbf24;
+  --color-danger: #f87171;
+  --color-info: #60a5fa;
 }
 
-@media (prefers-color-scheme: dark) {
-  :root {
-    /* --background: #ff6262;
-    --foreground: #ededed; */
-    --background: #f5f5f5;
-    --foreground: #171717;
+/* globals.css এ আছে */
+@layer utilities {
+  .bg-surface {
+    background-color: var(--color-surface);
+  }
+  .bg-card {
+    background-color: var(--color-card);
+  }
+  .border-color {
+    border-color: var(--color-border);
+  }
+  .bg-app {
+    background-color: var(--color-bg);
+  }
+  .border-app {
+    border-color: var(--color-border);
+  }
+  .text-app {
+    color: var(--color-text);
+  }
+  .text-muted {
+    color: var(--color-text-muted);
   }
 }
 
+@utility bg-card-hover {
+  background-color: var(--color-card-hover);
+}
+
 body {
-  background: var(--background);
+  background: var(--color-bg);
   color: var(--foreground);
-  /* font-family: Arial, Helvetica, sans-serif; */
+  font-family: var(--font-nunito);
+  transition:
+    background 0.3s ease,
+    color 0.3s ease;
 }

@@ -87,7 +87,7 @@ const FeatureCard = ({
         ${
           feature.highlight
             ? "bg-[#cf4f22] border-[#cf4f22] text-white"
-            : "bg-white border-gray-100 hover:border-[#cf4f22]/30 hover:shadow-lg hover:shadow-orange-50"
+            : "bg-white dark:bg-[#1D1D1C] border-gray-100 hover:border-[#cf4f22]/30 hover:shadow-lg hover:shadow-orange-50"
         }`}
     >
       {/* Subtle background pattern for highlight card */}
