@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
-import Sidebar from "./components/Sidebar";
+import AdminNav from "./components/AdminNav";
+import AdminSidebar from "./components/AdminSidebar";
 
 export const metadata: Metadata = {
   title: "medicopro | dashboard",
@@ -12,12 +13,13 @@ export default function RootLayout({
 }: Readonly<{
   children: React.ReactNode;
 }>) {
-  return <div className="flex h-screen">
-    {/* <div className=""> */}
-      <Sidebar/>
-    {/* </div> */}
-    <div className="flex-1 min-w-0 overflow-y-auto p-5" >
-    {children}
+  return (
+    <div className="h-screen">
+      <AdminNav/>
+      <div className="flex">
+      <AdminSidebar/>
+      <div className="flex-1 min-w-0 overflow-y-auto p-5">{children}</div>
+      </div>
     </div>
-    </div>;
+  );
 }

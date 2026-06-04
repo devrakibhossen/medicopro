@@ -11,10 +11,13 @@ import {
   Sun,
   Moon,
   ChevronRight,
+  UserRound,
 } from "lucide-react";
 import { useTheme } from "next-themes";
-
-const Sidebarbottom = () => {
+type SidebarbottomProps = {
+  sidebarOpen: boolean;
+};
+const Sidebarbottom = ({ sidebarOpen }: SidebarbottomProps) => {
   const { theme, setTheme } = useTheme();
 //   const [isDark, setIsDark] = useState("light");
   const isDark = theme === "dark";
@@ -23,7 +26,7 @@ const Sidebarbottom = () => {
     <div>
       <button
         onClick={() => setOpen(!open)}
-        className="group w-full flex items-center justify-between gap-3  bg-card  border-app  p-1.5 pr-3 rounded-full transition-all duration-200"
+        className={`group w-full flex items-center justify-between gap-3  ${sidebarOpen ? "bg-card":""}  border-app  p-1.5 pr-3 rounded-md transition-all duration-200`}
       >
         <span className="flex items-center gap-2.5">
           <span className="relative shrink-0">
@@ -37,6 +40,7 @@ const Sidebarbottom = () => {
             />
             <span className="absolute -bottom-0.5 -right-0.5 w-2.5 h-2.5 bg-green-400 border-2 border-white rounded-full" />
           </span>
+           {sidebarOpen && 
           <span className="leading-tight text-left">
             <h6 className="font-semibold text-app text-xs">
               Rakib Hossen
@@ -46,11 +50,14 @@ const Sidebarbottom = () => {
               <p className="text-[10px] text-muted font-medium">Free Plan</p>
             </span>
           </span>
-        </span>
+}
+</span>
+     {sidebarOpen && 
         <ChevronsDownUp
           size={14}
           className="text-gray-400 group-hover:text-gray-600 transition-colors shrink-0"
         />
+     }
       </button>
 
       {open && (
@@ -59,7 +66,24 @@ const Sidebarbottom = () => {
             {/* Settings */}
             <li>
               <Link
-                href="/settings"
+                href="/dashboard/profile"
+                className="group flex items-center gap-3 p-2 rounded-xl hover:bg-card-hover  transition-all"
+              >
+                <span className="w-7 h-7 rounded-lg bg-app flex items-center justify-center transition-colors">
+                  <UserRound
+                    size={14}
+                    className="text-gray-500  transition-colors"
+                  />
+                </span>
+                <span className="text-sm text-muted font-medium  flex-1">
+                  Profile
+                </span>
+               
+              </Link>
+            </li>
+            <li>
+              <Link
+                href="/dashboard/settings"
                 className="group flex items-center gap-3 p-2 rounded-xl hover:bg-card-hover  transition-all"
               >
                 <span className="w-7 h-7 rounded-lg bg-app flex items-center justify-center transition-colors">
@@ -71,10 +95,7 @@ const Sidebarbottom = () => {
                 <span className="text-sm text-muted font-medium  flex-1">
                   Settings
                 </span>
-                <ChevronRight
-                  size={13}
-                  className="text-gray-300 group-hover:text-gray-400 transition-colors"
-                />
+               
               </Link>
             </li>
 
@@ -115,10 +136,8 @@ const Sidebarbottom = () => {
                 <span className="text-sm text-muted font-medium  flex-1">
                   Get Help
                 </span>
-                <ChevronRight
-                  size={13}
-                  className="text-gray-300 group-hover:text-gray-400 transition-colors"
-                />
+              
+               
               </Link>
             </li>
 

@@ -87,7 +87,7 @@ const FeatureCard = ({
         ${
           feature.highlight
             ? "bg-[#cf4f22] border-[#cf4f22] text-white"
-            : "bg-white dark:bg-[#1D1D1C] border-gray-100 hover:border-[#cf4f22]/30 hover:shadow-lg hover:shadow-orange-50"
+            : "bg-card border-app hover:border-[#cf4f22]/30  hover:shadow-orange-50"
         }`}
     >
       {/* Subtle background pattern for highlight card */}
@@ -150,7 +150,7 @@ const FeatureCard = ({
         {/* Bottom accent */}
         <div
           className={`mt-auto pt-4 border-t
-            ${feature.highlight ? "border-white/15" : "border-gray-100"}`}
+            ${feature.highlight ? "border-app" : "border-app"}`}
         >
           <span
             className={`text-xs font-medium flex items-center gap-1.5 transition-colors
@@ -190,11 +190,11 @@ const Features = () => {
           Features
         </p>
         <div className="flex flex-col md:flex-row md:items-end md:justify-between gap-4">
-          <h2 className="text-gray-900 text-3xl md:text-4xl font-semibold leading-tight max-w-lg">
+          <h2 className="text-app text-3xl md:text-4xl font-semibold leading-tight max-w-lg">
             Everything you need,{" "}
             <span className="text-[#cf4f22]">{`nothing you don't.`}</span>
           </h2>
-          <p className="text-gray-500 text-sm max-w-xs leading-relaxed md:text-right">
+          <p className="text-muted text-sm max-w-xs leading-relaxed md:text-right">
             Medicopro brings hospital-grade health intelligence directly to your
             phone — simple, fast, and private.
           </p>
@@ -221,7 +221,7 @@ const Features = () => {
         initial={{ opacity: 0, y: 20 }}
         animate={isInView ? { opacity: 1, y: 0 } : {}}
         transition={{ duration: 0.6, delay: 0.5 }}
-        className="mt-10 rounded-2xl bg-orange-50 border border-orange-100 p-6 flex flex-col sm:flex-row items-center justify-between gap-4"
+        className="mt-10 rounded-2xl bg-card border-app p-6 flex flex-col sm:flex-row items-center justify-between gap-4"
       >
         <div>
           <h4 className="text-gray-900 font-semibold text-base">

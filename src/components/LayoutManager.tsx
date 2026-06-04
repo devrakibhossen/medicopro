@@ -9,13 +9,16 @@ const LayoutManager = ({ children }: { children: React.ReactNode }) => {
     "/accounts/sign-up",
     "/accounts/sign-in",
     "/dashboard",
-    "/dashboard/chat",
+    "/dashboard/recents",
     "/dashboard/chat/new",
     "/dashboard/chat/[id]",
     "/dashboard/chat/history",
     "/dashboard/profile",
     "/dashboard/records",
     "/dashboard/settings",
+    "/dashboard/reminder",
+    "/admin/dashboard",
+    "/not-found",
   ];
   const isNoLayout = noLayoutPages.includes(pathname);
   if (isNoLayout) {

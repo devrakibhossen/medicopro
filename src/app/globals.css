@@ -12,7 +12,7 @@
   --color-card-hover: #f0f0ec;
 
   /* Accent */
-  --color-accent: #d97706; /* primary CTA          */
+  --color-accent: #cf4f22; /* primary CTA          */
   --color-accent-h: #b45309; /* hover state          */
   --color-accent-bg: #fef3c7; /* subtle bg tint       */
 
@@ -38,7 +38,7 @@
   --color-card-hover: #323230;
 
   /* Accent */
-  --color-accent: #f59e0b;
+  --color-accent: #cf4f22;
   --color-accent-h: #fcd34d;
   --color-accent-bg: #412402;
 
@@ -81,6 +81,15 @@
 
 @utility bg-card-hover {
   background-color: var(--color-card-hover);
+}
+
+/* globals.css এ যোগ করো */
+.hide-scrollbar::-webkit-scrollbar {
+  display: none;
+}
+.hide-scrollbar {
+  -ms-overflow-style: none;
+  scrollbar-width: none;
 }
 
 body {
